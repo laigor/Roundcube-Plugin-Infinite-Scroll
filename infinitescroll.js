@@ -30,11 +30,11 @@ if (window.rcmail) {
 	var ml_container = '#messagelistcontainer';
 	if(rcmail.env.skin == 'elastic') {
 	  ml_container = '#messagelist-content';
-	  $('.firstpage').closest('div').children().hide();
-	} else {
+	  // $('.firstpage').closest('div').children().hide();
+	} /* else {
           $('.pagenavbuttons').hide();
           $('#countcontrols').hide();
-	}
+	}*/
 
         // Detect scroll on messagelist
         $(ml_container).scroll(function() {
@@ -60,17 +60,15 @@ if (window.rcmail) {
           // Reinit the data when the list is refresh
           rcmail.message_list.addEventListener('clear', function(evt) {
             page_loading = {};
-            rcmail.env.current_page = 1;
-            current_page_scroll = 2;
+	    current_page_scroll = rcmail.env.current_page + 1;
           });
           rcmail.addEventListener('responseafterlist', function(evt) {
             if (rcmail.env.use_infinite_scroll) {
               current_page_scroll = rcmail.env.current_page + 1;
-              rcmail.env.current_page = 1;
             }
-            rcmail.http_post('plugin.set_current_page', {});
           });
         }
+	current_page_scroll = rcmail.env.current_page + 1;
       }
     });   
 }

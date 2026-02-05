@@ -57,16 +57,6 @@ class infinitescroll extends rcube_plugin {
   }
 
   /**
-   * Reinit current page
-   */
-  public function set_current_page() {
-    $_SESSION['page'] = 1;
-    $result = array('action' => 'plugin.set_current_page');
-    echo json_encode($result);
-    exit();
-  }
-
-  /**
    * Handler for user preferences form (preferences_list hook)
    */
   public function prefs_list($args) {
