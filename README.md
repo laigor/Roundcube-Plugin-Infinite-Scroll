@@ -1,3 +1,4 @@
+A slightly modified version of the original plugin – I've combined infinite scrolling and pagination. If you enable the plugin, the page numbers don't disappear and continue to function as before. You can turn pages by scrolling with your mouse and using the next/previous page buttons.
 # Roundcube-Plugin-Infinite-Scroll
 Remove nav page for messages and support infinite scroll in the message list
 
